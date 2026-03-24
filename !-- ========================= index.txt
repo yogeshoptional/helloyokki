@@ -1,0 +1,169 @@
+<!-- ========================= index.html ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helloyokki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <h1 class="logo">Helloyokki</h1>
+    <a href="#cta" class="btn">Book @ ₹99</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h2>Helping Businesses Scale with Real Ads</h2>
+    <p>Teaching Future Marketers Performance Marketing</p>
+    <a href="#cta" class="btn">Book Webinar @ ₹99</a>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="container">
+    <h2>How I Generated 150+ Quality Leads with Just ₹6K Budget</h2>
+    <p>Recent Facebook Ads Webinar</p>
+    <ul>
+      <li>Real campaign breakdown</li>
+      <li>Exact targeting strategy</li>
+      <li>Funnel structure</li>
+    </ul>
+    <div class="price">Only ₹99</div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="container grid">
+    <div class="card">150+ Leads</div>
+    <div class="card">₹6000 Spend</div>
+    <div class="card">B2B Success</div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>Performance marketer focused on B2B lead generation and real results.</p>
+  </div>
+</section>
+
+<section class="audience">
+  <div class="container">
+    <h2>Who This Is For</h2>
+    <ul>
+      <li>Business Owners</li>
+      <li>Freelancers</li>
+      <li>Aspiring Marketers</li>
+      <li>Agency Beginners</li>
+    </ul>
+  </div>
+</section>
+
+<section class="learn">
+  <div class="container">
+    <h2>What You'll Learn</h2>
+    <ul>
+      <li>Lead Generation</li>
+      <li>Facebook Ads Setup</li>
+      <li>Funnels</li>
+      <li>Budget Optimization</li>
+      <li>Scaling</li>
+    </ul>
+  </div>
+</section>
+
+<section class="details">
+  <div class="container">
+    <h2>Webinar Details</h2>
+    <p>Coming Soon</p>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container grid">
+    <div class="card">
+      <h3>Others</h3>
+      <p>₹4999+ (Theory)</p>
+    </div>
+    <div class="card highlight">
+      <h3>This Webinar</h3>
+      <p>₹99 (Practical)</p>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="cta">
+  <div class="container">
+    <h2>Don't Miss This — Learn Real Ads That Actually Convert</h2>
+    <a href="#" class="btn">Book Now @ ₹99</a>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- ========================= style.css ========================= -->
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0A0A0A;
+  color: #fff;
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 0;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background: #0A0A0A;
+  padding: 10px 0;
+}
+.logo { color: #D4AF37; }
+.btn {
+  background: #D4AF37;
+  color: #000;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.hero { text-align: center; }
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.highlight { border: 2px solid #D4AF37; }
+ul { list-style: none; padding: 0; }
+li { margin: 10px 0; }
+
+@media(max-width:768px){
+  .grid { flex-direction: column; }
+}
+
+
+<!-- ========================= script.js ========================= -->
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
