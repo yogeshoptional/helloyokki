@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manufacturer Poll</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #fff;
+    }
+
+    .container {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 15px;
+        width: 350px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .option {
+        background: #334155;
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .option:hover {
+        background: #475569;
+    }
+
+    .selected {
+        background: #22c55e !important;
+        color: #000;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #22c55e, #4ade80);
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+
+    .result {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #94a3b8;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Why do buyers choose competitors?</h2>
+
+    <div class="option" onclick="selectOption(this)">Better pricing</div>
+    <div class="option" onclick="selectOption(this)">Faster response</div>
+    <div class="option" onclick="selectOption(this)">Better presentation</div>
+    <div class="option" onclick="selectOption(this)">Stronger relationships</div>
+
+    <button onclick="submitPoll()">Submit</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+let selected = "";
+
+function selectOption(el) {
+    document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+    el.classList.add('selected');
+    selected = el.innerText;
+}
+
+function submitPoll() {
+    if(selected === "") {
+        document.getElementById("result").innerText = "Please select an option.";
+    } else {
+        document.getElementById("result").innerText = "You selected: " + selected;
+    }
+}
+</script>
+
+</body>
+</html>
